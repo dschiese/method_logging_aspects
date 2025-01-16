@@ -34,3 +34,24 @@ To use any of the aspects provided in this repository, you just need to add the 
     </executions>
 </plugin>
 ```
+
+Inside `<weaveDependencies></weaveDependencies>`, you have to provide the artifacts where your designated aspects come from. Additionally, don't forget to include the corresponding dependency. For example:
+
+An exemplary aspect is part of the artifact `method_logging_aspect` in `org.wseresearch` (groupId). Therefore, you should include the following to the `weaveDependencies`:
+
+```
+            <weaveDependency>
+                <groupId>org.wseresearch</groupId>
+                <artifactId>method_logging_aspect</artifactId>
+            </weaveDependency>
+```
+and the dependency:
+```
+        <dependency>
+            <groupId>org.wseresearch</groupId>
+            <artifactId>method_logging_aspect</artifactId>
+            <version>0.1.0</version>
+        </dependency>
+```
+
+
